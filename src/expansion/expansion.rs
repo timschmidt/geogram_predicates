@@ -264,7 +264,7 @@ impl<const N: usize> From<&[f64]> for Expansion<N> {
     /// components equal to the slice elements in order.
     fn from(slice: &[f64]) -> Self {
         Expansion {
-            data: SmallVec::from_slice(slice),
+            data: SmallVec::from_slice_copy(slice),
         }
     }
 }
