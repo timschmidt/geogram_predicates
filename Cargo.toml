@@ -13,18 +13,19 @@ rust-version = "1.85.1"
 
 repository = "https://github.com/glennDittmann/geogram_predicates"
 authors = ["Glenn Dittmann", "TimTheBig"]
-license = "LGPL-3.0 OR MIT"
+# when the legacy feature is enabled the c++ code it use is apache
+license = "MIT OR (MIT AND Apache-2.0)"
 
 keywords = ["computer-graphics", "math", "geometry", "predicates", "robust"]
 categories = ["no-std", "mathematics", "graphics"]
 
 [dependencies]
-smallvec = "2.0.0-alpha.11"
-nalgebra = { version = "0.33", features = ["macros", "matrixmultiply"], default-features = false }
+smallvec = "2.0.0-alpha.12"
+nalgebra = { version = "0.34", features = ["macros", "matrixmultiply"], default-features = false }
 robust = { version = "1.2", features = ["no_std"] }
 # legacy
 cxx = { version = "1.0", features = ["alloc", "c++20"], default-features = false, optional = true }
-libm = { version = "0.2.15", optional = true }
+libm = { version = "0.2", optional = true }
 
 [build-dependencies]
 cxx-build = { version = "1.0", optional = true }
