@@ -82,6 +82,20 @@ There are a lot of predicates still to be implemented. If you are in need for a 
 The API to the `geogram predicates` is designed with the following design principles in mind:
 - **Relation to geogram**: the _function names_, _signatures_ and _doc strings_ should be as close as possible to the original. This keeps maintaining, updating and comparing as simple as possible
 
+## Development
+
+Rust nightly is currently required for fuzz testing.
+
+```shell
+rustup default nightly
+```
+
+## Fuzz testing
+
+```shell
+cargo fuzz check
+```
+
 ## Contribution
 If you see something as
 - software design principles that could be improved,
